@@ -1,0 +1,34 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+}
+
+.modal h4 {
+  margin-top: 0;
+}
+
+.buttons_goup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal button {
+  margin-right: 10px;
+  border: none;
+  background-color: #ccc;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.modal button:last-child {
+  background-color: #0074d9;
+  margin-right: 0;
+}
+
+.modal button:last-child:hover {
+  background-color: #0063ad;
+}

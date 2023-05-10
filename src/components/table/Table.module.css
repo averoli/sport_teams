@@ -119,6 +119,7 @@ td {
 }
 
 .sort_button {
+  background-color: rgb(228, 231, 235);
   border: none;
   cursor: pointer;
 }

@@ -1,8 +1,9 @@
 import React from "react";
+import Logo from "../logo/Logo";
 import { Team } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import imageDefault from "../../assets/images/default.png";
+
 import styles from "./Table.module.css";
 
 interface TeamTableHeaderProps {
@@ -22,11 +23,7 @@ const TeamTableRow: React.FC<TeamTableHeaderProps> = ({ team, openModal }) => {
   return (
     <tr>
       <td>
-        {team?.logo && "data" in team.logo ? (
-          <img src={team.logo.data} alt={team.name} width="40" />
-        ) : (
-          <img src={imageDefault} alt={team.name} width="40" />
-        )}
+        <Logo team={team} />
       </td>
       <td>{team.name}</td>
       <td>{team.field}</td>

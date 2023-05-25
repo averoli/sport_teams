@@ -25,7 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({
         {pageNumbers.map((number) => (
           <li key={number} className={styles.page_item}>
             <button
-              className={`styles.page_link${currentPage === number ? ' active' : ''}`}
+              className={`${styles.page_link}${currentPage === number ? 'styles.active' : ''}`}
               onClick={() => paginate(number)}
             >
               {number}

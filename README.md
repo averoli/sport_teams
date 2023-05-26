@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+The web application is designed to showcase team information and their respective logos, along with additional functionality such as sorting, status indicators, and video previews. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is implemented in React and adheres to the given requirements, including TypeScript integration, responsive design, and clean code practices.
 
-## Available Scripts
+## Project Structure
+The project follows a typical React application structure with the following key components and folders:
+- src/components: Contains reusable UI components used throughout the application.
+- src/assets: Contains static assets such as images and videos.
+- src/data: Includes the data source for the team list.
+- src/App.tsx: The main application component that handles rendering and state management.
+- src/index.tsx: The entry point of the application.
 
-In the project directory, you can run:
+## Installation and Setup
+To set up the project locally, follow these steps:
 
-### `npm start`
+- Clone the project repository from [repository-url].
+- Ensure that Node.js and npm (Node Package Manager) are installed on your machine.
+- Open a terminal and navigate to the project root directory.
+- Run the command npm install to install the project dependencies.
+- Once the installation is complete, run the command npm start to start the development server.
+- Access the application by visiting http://localhost:3000 in your web browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features and Functionality
+The web application provides the following features and functionality based on the given requirements:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Displaying Team List:
 
-### `npm test`
+The team list is fetched from a data source, which can be replaced or extended as needed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Each team's logo is displayed in the first column, adhering to the specified conditions:
 
-### `npm run build`
+- If the logo type is "attach," the corresponding image can be found in the assets/images folder with the filename specified in the "data" key.
+- If the logo type is "string," the corresponding image can be found in the "data" key.
+- If there is no logo, a default image named "default.png" in the assets/images folder is rendered.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The team list is sorted alphabetically by the team's location.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If a team does not have a "nextSchedule," the table displays "N/A" in the respective cell.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The "State" column displays a distinct label based on the team's status:
+- "recording" status is indicated with a green color.
+- "recorded" status is indicated with a blue color.
+- "offline" status is indicated with a red color.
+- "default/undefined/null" status is indicated with a gray color and the text "N/A."
 
-### `npm run eject`
+The "Preview" column provides interactive functionality:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- If there is no active session (recording or recorded), the modal does not open as there is no video to show.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+An open eye icon (green) is displayed and clickable, which opens a modal showing a preview of the "video_example.mp4" video. The modal also includes a title with the team's name.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A closed eye icon (red) is displayed and NOT clickable.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Pagination:
 
-## Learn More
+The team list is paginated with a maximum of 10 elements per page. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pagination controls are provided to navigate between pages and view different sections of the team list.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Loader Animations:
+
+Loader animations are implemented throughout the application to enhance the user experience.
+
+These animations are displayed during loading states, ensuring a visually appealing experience even if there is no significant wait time.
+
+## Technologies Used
+The web application utilizes the following technologies and tools:
+
+- React: A JavaScript library for building user interfaces.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- HTML/CSS: Standard web technologies for markup and styling.
+- React Modal: A popular React library for creating modals and pop-ups.
+- React Icons: A collection of popular icons as React components.
+- React Router: A library for handling routing within a React application.
+- Loader CSS: A library for easily adding loader animations to web applications.

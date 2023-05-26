@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Team, Logo } from "../../../types";
 import TeamTable from "../TeamTable";
 import SkeletonTable from "../../skeleton/SkeletonTable";
@@ -11,7 +11,7 @@ const TeamList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const convertLogoFormat = (logo: Logo) => {
+  const convertLogoFormat = useCallback((logo: Logo) => {
     switch (logo?.type) {
       case "string":
         return prepareStringImage(logo);
@@ -20,7 +20,7 @@ const TeamList: React.FC = () => {
       default:
         return null;
     }
-  };
+  }, []);
 
   const prepareStringImage = (logo: Logo) => {
     const data = logo.data.startsWith("data:")

@@ -66,7 +66,7 @@ const TeamList: React.FC = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [convertLogoFormat]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
